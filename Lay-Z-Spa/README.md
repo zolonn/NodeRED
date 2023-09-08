@@ -1,4 +1,4 @@
-# NodeRED UI Contril for Lay-Z-Spa ESP WiFi
+# NodeRED UI control for Lay-Z-Spa ESP WiFi
 
 Flow to control the Lay-Z-Spa ESP WiFi interface 
 https://github.com/visualapproach/WiFi-remote-for-Bestway-Lay-Z-SPA
