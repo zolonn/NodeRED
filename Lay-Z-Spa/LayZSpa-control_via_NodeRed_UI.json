@@ -1,0 +1,1421 @@
+[
+    {
+        "disabled": false,
+        "env": [
+        ],
+        "id": "a9030351c3d37f26",
+        "info": "",
+        "label": "Lay-Z-Spa",
+        "type": "tab"
+    },
+    {
+        "h": 242,
+        "id": "400a7cafac3ffc37",
+        "name": "Info Group",
+        "nodes": [
+            "638a7403bd6e95df",
+            "ab9a7d51755d2be9",
+            "66f4f9c7ca71e336",
+            "b06d7fbc5522bc2b",
+            "75f4fa30d5a1dde8",
+            "49c75fdea3f24d68",
+            "ca182f9cd1b38747",
+            "5ed496620a074532",
+            "89925d193a28e0f5",
+            "a922a50dca018e79"
+        ],
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "type": "group",
+        "w": 352,
+        "x": 394,
+        "y": 839,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 262,
+        "id": "7b705a5c4c00d580",
+        "name": "Control Group",
+        "nodes": [
+            "b14211297b609eee",
+            "fb5538e1a888cadb",
+            "929c4e8736068255",
+            "241f8f960a7ae329",
+            "117681dc6c636e54",
+            "85ef394543a1730a",
+            "361200b24c2759fe",
+            "c4147fd80f85bd21",
+            "e7736ef5be163636",
+            "5c4b37f27ed2a675",
+            "26ce1480dddd938c",
+            "4025c7831173ad1b"
+        ],
+        "style": {
+            "fill": "#ffffbf",
+            "label": true
+        },
+        "type": "group",
+        "w": 692,
+        "x": 394,
+        "y": 499,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 122,
+        "id": "dc8287ed0308a721",
+        "name": "Current Temperature Group",
+        "nodes": [
+            "ab442c8e4e2441fa",
+            "5677d15a689f20bc",
+            "9ba0a49b01875607"
+        ],
+        "style": {
+            "fill": "#bfdbef",
+            "label": true
+        },
+        "type": "group",
+        "w": 412,
+        "x": 394,
+        "y": 39,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 82,
+        "id": "1bb7928e59298c77",
+        "name": "Set Temperature Goal - Variant 1",
+        "nodes": [
+            "1e7b932c9d90fc27",
+            "110309cfc2f9e832",
+            "3055d6cbf8b0657a"
+        ],
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true
+        },
+        "type": "group",
+        "w": 692,
+        "x": 394,
+        "y": 179,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 202,
+        "id": "bf61ebb4650fa8b7",
+        "name": "Set Temperature Goal - Variant 2",
+        "nodes": [
+            "90deb4831cf2e926",
+            "b1768c491529c274",
+            "7597d5b69a0e9231",
+            "0adb4f2bdb6c13b1",
+            "4a3193a98ea4be2e",
+            "fc5a2c4b57487aa0",
+            "a39cda3c1dbb056e",
+            "e6c94c29d4ca0beb",
+            "953dbca75b8566b8"
+        ],
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true
+        },
+        "type": "group",
+        "w": 692,
+        "x": 394,
+        "y": 279,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 142,
+        "id": "6fd4b886b3c53393",
+        "name": "Debug",
+        "nodes": [
+            "f22591517262dba3",
+            "02e2a8e042c5d930"
+        ],
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "type": "group",
+        "w": 192,
+        "x": 54,
+        "y": 399,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "h": 162,
+        "id": "8954f05f5ab88273",
+        "name": "Reboot ESP",
+        "nodes": [
+            "0a2615ba6b57e79f",
+            "849a5d5f34467f38",
+            "f2c55ef98c424d25"
+        ],
+        "style": {
+            "color": "#000000",
+            "fill": "#ff7f7f",
+            "label": true
+        },
+        "type": "group",
+        "w": 272,
+        "x": 54,
+        "y": 579,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "active": false,
+        "complete": "true",
+        "console": false,
+        "id": "796d9fa6e17f9d61",
+        "name": "D.Spa",
+        "statusType": "auto",
+        "statusVal": "",
+        "targetType": "full",
+        "tosidebar": true,
+        "tostatus": false,
+        "type": "debug",
+        "wires": [
+        ],
+        "x": 130,
+        "y": 280,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "datatype": "json",
+        "id": "16452d7ea5e712f4",
+        "inputs": 0,
+        "name": "Lay-Z-Spa Messages",
+        "nl": false,
+        "qos": "2",
+        "rap": false,
+        "topic": "layzspa/message",
+        "type": "mqtt in",
+        "wires": [
+            [
+                "796d9fa6e17f9d61",
+                "ab442c8e4e2441fa",
+                "90deb4831cf2e926",
+                "117681dc6c636e54",
+                "361200b24c2759fe",
+                "85ef394543a1730a",
+                "c4147fd80f85bd21",
+                "110309cfc2f9e832"
+            ]
+        ],
+        "x": 180,
+        "y": 220,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "colors": [
+            "#e6e600",
+            "#00b500",
+            "#ca3838"
+        ],
+        "diff": false,
+        "format": "{{value}}",
+        "g": "dc8287ed0308a721",
+        "group": "89a080bc3a655c5c",
+        "gtype": "gage",
+        "height": 0,
+        "id": "5677d15a689f20bc",
+        "label": "°C",
+        "max": "45",
+        "min": 0,
+        "name": "Ist Temperatur",
+        "order": 1,
+        "seg1": "35",
+        "seg2": "40",
+        "title": "Temperatur",
+        "type": "ui_gauge",
+        "width": 0,
+        "wires": [
+        ],
+        "x": 700,
+        "y": 80,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "var newmsg ={};\nnewmsg.payload = msg.payload.VTMC;\nnewmsg.payload = Math.round(newmsg.payload*100)/100\nreturn newmsg;",
+        "g": "dc8287ed0308a721",
+        "id": "ab442c8e4e2441fa",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Temp current",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "5677d15a689f20bc",
+                "9ba0a49b01875607"
+            ]
+        ],
+        "x": 500,
+        "y": 100,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "g": "dc8287ed0308a721",
+        "group": "89a080bc3a655c5c",
+        "height": 0,
+        "id": "9ba0a49b01875607",
+        "interpolate": "linear",
+        "label": "",
+        "legend": "false",
+        "name": "Ist Temperatur",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 0,
+        "wires": [
+            [
+            ]
+        ],
+        "x": 700,
+        "xformat": "HH:mm:ss",
+        "y": 120,
+        "ymax": "",
+        "ymin": "",
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "animate": false,
+        "className": "",
+        "decouple": "true",
+        "g": "7b705a5c4c00d580",
+        "group": "3f65559ff6e71dbc",
+        "height": 0,
+        "id": "b14211297b609eee",
+        "label": "Heizung",
+        "name": "Heizung",
+        "offcolor": "",
+        "officon": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "oncolor": "",
+        "onicon": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "order": 2,
+        "passthru": false,
+        "style": "",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_switch",
+        "width": 0,
+        "wires": [
+            [
+                "e7736ef5be163636"
+            ]
+        ],
+        "x": 680,
+        "y": 600,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "animate": false,
+        "className": "",
+        "decouple": "true",
+        "g": "7b705a5c4c00d580",
+        "group": "3f65559ff6e71dbc",
+        "height": 0,
+        "id": "fb5538e1a888cadb",
+        "label": "Pumpe",
+        "name": "Pumpe",
+        "offcolor": "",
+        "officon": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "oncolor": "",
+        "onicon": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "order": 1,
+        "passthru": false,
+        "style": "",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_switch",
+        "width": 0,
+        "wires": [
+            [
+                "26ce1480dddd938c"
+            ]
+        ],
+        "x": 680,
+        "y": 660,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "animate": false,
+        "className": "",
+        "decouple": "true",
+        "g": "7b705a5c4c00d580",
+        "group": "3f65559ff6e71dbc",
+        "height": 0,
+        "id": "929c4e8736068255",
+        "label": "Luft",
+        "name": "Luft",
+        "offcolor": "",
+        "officon": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "oncolor": "",
+        "onicon": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "order": 3,
+        "passthru": false,
+        "style": "",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_switch",
+        "width": 0,
+        "wires": [
+            [
+                "5c4b37f27ed2a675"
+            ]
+        ],
+        "x": 670,
+        "y": 540,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "animate": false,
+        "className": "",
+        "decouple": "true",
+        "g": "7b705a5c4c00d580",
+        "group": "3f65559ff6e71dbc",
+        "height": 0,
+        "id": "241f8f960a7ae329",
+        "label": "Ein/Aus",
+        "name": "Ein/Aus",
+        "offcolor": "",
+        "officon": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "oncolor": "",
+        "onicon": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "order": 4,
+        "passthru": false,
+        "style": "",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_switch",
+        "width": 0,
+        "wires": [
+            [
+                "4025c7831173ad1b"
+            ]
+        ],
+        "x": 680,
+        "y": 720,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "var newmsg ={};\nnewmsg.payload = msg.payload.TGTC;\n\nreturn newmsg;",
+        "g": "bf61ebb4650fa8b7",
+        "id": "90deb4831cf2e926",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Temp goal",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "a39cda3c1dbb056e"
+            ]
+        ],
+        "x": 490,
+        "y": 340,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "var newmsg ={};\nnewmsg.payload = msg.payload.AIR;\nif ( newmsg.payload === 1 )\n    newmsg.payload = true;\nelse\n    newmsg.payload = false;\n\nreturn newmsg;",
+        "g": "7b705a5c4c00d580",
+        "id": "117681dc6c636e54",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Air",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "929c4e8736068255"
+            ]
+        ],
+        "x": 470,
+        "y": 540,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nheating is ON when heating is:\nRED=1 - heating on - heating\nor\nGRN=1 - heating on - target temperature reached, not heating\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.RED || msg.payload.GRN;\nif ( newmsg.payload === 1 )\n    newmsg.payload = true;\nelse\n    newmsg.payload = false;\n\nreturn newmsg;",
+        "g": "7b705a5c4c00d580",
+        "id": "85ef394543a1730a",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Heating",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "b14211297b609eee"
+            ]
+        ],
+        "x": 490,
+        "y": 600,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "var newmsg ={};\nnewmsg.payload = msg.payload.FLT;\nif ( newmsg.payload === 1 )\n    newmsg.payload = true;\nelse\n    newmsg.payload = false;\n\nreturn newmsg;",
+        "g": "7b705a5c4c00d580",
+        "id": "361200b24c2759fe",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Pump",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "fb5538e1a888cadb"
+            ]
+        ],
+        "x": 480,
+        "y": 660,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nas there is no MQTT command for power off, \npower off is simulated by setting the display brightnes to 0\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.BRT;\nif ( newmsg.payload > 0 )\n    newmsg.payload = true;\nelse\n    newmsg.payload = false;\n\nreturn newmsg;",
+        "g": "7b705a5c4c00d580",
+        "id": "c4147fd80f85bd21",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> On/Off",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "241f8f960a7ae329"
+            ]
+        ],
+        "x": 480,
+        "y": 720,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "contentType": "",
+        "correl": "",
+        "expiry": "",
+        "id": "dedcead9830892c7",
+        "name": "Lay-Z-Spa Command",
+        "qos": "",
+        "respTopic": "",
+        "retain": "",
+        "topic": "layzspa/command",
+        "type": "mqtt out",
+        "userProps": "",
+        "wires": [
+        ],
+        "x": 1260,
+        "y": 220,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n//turn light on (a.k.a. power ON)\nvar msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n// turn heating on/off\nvar msg1 = {payload:{\"CMD\":3,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n\nif ( msg.payload === true )\n    msg1.payload.VALUE = 1;\n\nreturn [[msg0,msg1]];",
+        "g": "7b705a5c4c00d580",
+        "id": "e7736ef5be163636",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 600,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "datatype": "json",
+        "g": "6fd4b886b3c53393",
+        "id": "f22591517262dba3",
+        "inputs": 0,
+        "name": "Lay-Z-Spa All",
+        "nl": false,
+        "qos": "2",
+        "rap": false,
+        "topic": "layzspa/#",
+        "type": "mqtt in",
+        "wires": [
+            [
+                "02e2a8e042c5d930"
+            ]
+        ],
+        "x": 150,
+        "y": 440,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "active": false,
+        "complete": "true",
+        "console": false,
+        "g": "6fd4b886b3c53393",
+        "id": "02e2a8e042c5d930",
+        "name": "D.Spa all",
+        "statusType": "auto",
+        "statusVal": "",
+        "targetType": "full",
+        "tosidebar": true,
+        "tostatus": false,
+        "type": "debug",
+        "wires": [
+        ],
+        "x": 140,
+        "y": 500,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n//turn light on (a.k.a. power ON)\nvar msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n// turn air on/off\nvar msg1 = {payload:{\"CMD\":2,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n\nif ( msg.payload === true )\n    msg1.payload.VALUE = 1;\n\nreturn [[msg0,msg1]];",
+        "g": "7b705a5c4c00d580",
+        "id": "5c4b37f27ed2a675",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 540,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n//turn light on (a.k.a. power ON)\nvar msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n// set target temperature\nvar msg1 = {payload:{\"CMD\":0,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\nmsg1.payload.VALUE = msg.payload;\n\nreturn [[msg0,msg1]];\n",
+        "g": "bf61ebb4650fa8b7",
+        "id": "b1768c491529c274",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 440,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n//turn light on (a.k.a. power ON)\nvar msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n// turn pump on/off\nvar msg1 = {payload:{\"CMD\":4,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n\nif ( msg.payload === true )\n    msg1.payload.VALUE = 1;\n\nreturn [[msg0,msg1]];",
+        "g": "7b705a5c4c00d580",
+        "id": "26ce1480dddd938c",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 660,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\nif ( msg.payload === true )\n    {\n    // Power ON command - turn display on\n    var msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n    return msg0;\n    }\nelse\n    {\n    // Power OFF command - turn bubbles, pump and display off\n    // note: turning pump off turns the heating off too, no need for another command\n    var msg1 = {payload:{\"CMD\":2,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n    var msg2 = {payload:{\"CMD\":4,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n    var msg3 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\n    return [[msg1,msg2,msg3]];\n    }\n\n\n\n",
+        "g": "7b705a5c4c00d580",
+        "id": "4025c7831173ad1b",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 720,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "d": true,
+        "format": "{{value}}",
+        "g": "1bb7928e59298c77",
+        "group": "3584dd1ead9f4221",
+        "height": 0,
+        "id": "1e7b932c9d90fc27",
+        "label": "Temperatur",
+        "max": "40",
+        "min": "20",
+        "name": "Soll Temperatur",
+        "order": 1,
+        "passthru": false,
+        "step": 1,
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_numeric",
+        "width": 0,
+        "wires": [
+            [
+                "3055d6cbf8b0657a"
+            ]
+        ],
+        "wrap": false,
+        "x": 700,
+        "y": 220,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "bf61ebb4650fa8b7",
+        "group": "3584dd1ead9f4221",
+        "height": 1,
+        "id": "7597d5b69a0e9231",
+        "label": "",
+        "layout": "col-center",
+        "name": "Soll temperatur",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": 2,
+        "wires": [
+        ],
+        "x": 700,
+        "y": 380,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "bgcolor": "",
+        "className": "",
+        "color": "",
+        "g": "bf61ebb4650fa8b7",
+        "group": "3584dd1ead9f4221",
+        "height": 1,
+        "icon": "",
+        "id": "0adb4f2bdb6c13b1",
+        "label": "-",
+        "name": "Temp -",
+        "order": 3,
+        "passthru": false,
+        "payload": "-1",
+        "payloadType": "str",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_button",
+        "width": 1,
+        "wires": [
+            [
+                "e6c94c29d4ca0beb"
+            ]
+        ],
+        "x": 670,
+        "y": 340,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "bgcolor": "",
+        "className": "",
+        "color": "",
+        "g": "bf61ebb4650fa8b7",
+        "group": "3584dd1ead9f4221",
+        "height": 1,
+        "icon": "",
+        "id": "4a3193a98ea4be2e",
+        "label": "+",
+        "name": "Temp +",
+        "order": 5,
+        "passthru": false,
+        "payload": "1",
+        "payloadType": "str",
+        "tooltip": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "type": "ui_button",
+        "width": 1,
+        "wires": [
+            [
+                "e6c94c29d4ca0beb"
+            ]
+        ],
+        "x": 680,
+        "y": 420,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "msg.payload.goal = 1*msg.payload.goal + 1*msg.payload.change;\nif ( 1*msg.payload.goal<20)\n    msg.payload.goal = 20;\nif (1*msg.payload.goal>40)\n    msg.payload.goal = 40;\nreturn msg;",
+        "g": "bf61ebb4650fa8b7",
+        "id": "fc5a2c4b57487aa0",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "set temp",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "953dbca75b8566b8"
+            ]
+        ],
+        "x": 980,
+        "y": 360,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "action": "",
+        "from": "",
+        "g": "bf61ebb4650fa8b7",
+        "id": "a39cda3c1dbb056e",
+        "name": "C",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "TempGoal",
+                "pt": "flow",
+                "t": "set",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "7597d5b69a0e9231"
+            ]
+        ],
+        "x": 470,
+        "y": 380,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "action": "",
+        "from": "",
+        "g": "bf61ebb4650fa8b7",
+        "id": "e6c94c29d4ca0beb",
+        "name": "C1",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "move",
+                "to": "payload.change",
+                "tot": "msg"
+            },
+            {
+                "p": "payload.goal",
+                "pt": "msg",
+                "t": "set",
+                "to": "TempGoal",
+                "tot": "flow"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "fc5a2c4b57487aa0"
+            ]
+        ],
+        "x": 970,
+        "y": 320,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "action": "",
+        "from": "",
+        "g": "bf61ebb4650fa8b7",
+        "id": "953dbca75b8566b8",
+        "name": "C2",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "TempGoal",
+                "pt": "flow",
+                "t": "set",
+                "to": "payload.goal",
+                "tot": "msg"
+            },
+            {
+                "p": "payload.goal",
+                "pt": "msg",
+                "t": "move",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "b1768c491529c274"
+            ]
+        ],
+        "x": 970,
+        "y": 400,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "400a7cafac3ffc37",
+        "group": "fb4598d63a717c25",
+        "height": "0",
+        "id": "638a7403bd6e95df",
+        "label": "FW:",
+        "layout": "row-spread",
+        "name": "FW",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": "0",
+        "wires": [
+        ],
+        "x": 670,
+        "y": 880,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nFW Version\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.FW;\n\nreturn newmsg;",
+        "g": "400a7cafac3ffc37",
+        "id": "ab9a7d51755d2be9",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> FW",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "638a7403bd6e95df"
+            ]
+        ],
+        "x": 470,
+        "y": 880,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "400a7cafac3ffc37",
+        "group": "fb4598d63a717c25",
+        "height": "0",
+        "id": "66f4f9c7ca71e336",
+        "label": "IP:",
+        "layout": "row-spread",
+        "name": "IP",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": "0",
+        "wires": [
+        ],
+        "x": 670,
+        "y": 920,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nIP\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.IP;\n\nreturn newmsg;",
+        "g": "400a7cafac3ffc37",
+        "id": "b06d7fbc5522bc2b",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> IP",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "66f4f9c7ca71e336"
+            ]
+        ],
+        "x": 470,
+        "y": 920,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "var newmsg ={};\nnewmsg.payload = msg.payload.TGTC;\n\nreturn newmsg;",
+        "g": "1bb7928e59298c77",
+        "id": "110309cfc2f9e832",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Temp goal",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "1e7b932c9d90fc27"
+            ]
+        ],
+        "x": 490,
+        "y": 220,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n//turn light on (a.k.a. power ON)\nvar msg0 = {payload:{\"CMD\":12,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":8}};\n// set target temperature\nvar msg1 = {payload:{\"CMD\":0,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":0}};\nmsg1.payload.VALUE = msg.payload;\n\nreturn [[msg0,msg1]];\n",
+        "g": "1bb7928e59298c77",
+        "id": "3055d6cbf8b0657a",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> command",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "dedcead9830892c7"
+            ]
+        ],
+        "x": 990,
+        "y": 220,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "datatype": "json",
+        "id": "4b04104aae3027bc",
+        "inputs": 0,
+        "name": "Lay-Z-Spa Info",
+        "nl": false,
+        "qos": "2",
+        "rap": false,
+        "topic": "layzspa/other",
+        "type": "mqtt in",
+        "wires": [
+            [
+                "ab9a7d51755d2be9",
+                "b06d7fbc5522bc2b"
+            ]
+        ],
+        "x": 160,
+        "y": 900,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "datatype": "json",
+        "id": "e7577b01f7697ce9",
+        "inputs": 0,
+        "name": "Lay-Z-Spa Power",
+        "nl": false,
+        "qos": "2",
+        "rap": false,
+        "topic": "layzspa/times",
+        "type": "mqtt in",
+        "wires": [
+            [
+                "75f4fa30d5a1dde8",
+                "ca182f9cd1b38747",
+                "89925d193a28e0f5"
+            ]
+        ],
+        "x": 160,
+        "y": 980,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nFW Version\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.WATT + \" W\";\n\nreturn newmsg;",
+        "g": "400a7cafac3ffc37",
+        "id": "75f4fa30d5a1dde8",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Watt",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "49c75fdea3f24d68"
+            ]
+        ],
+        "x": 480,
+        "y": 960,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "400a7cafac3ffc37",
+        "group": "fb4598d63a717c25",
+        "height": "0",
+        "id": "49c75fdea3f24d68",
+        "label": "Verbrauch:",
+        "layout": "row-spread",
+        "name": "W",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": "0",
+        "wires": [
+        ],
+        "x": 670,
+        "y": 960,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nFW Version\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.KWH;\nnewmsg.payload = Math.round(newmsg.payload*100)/100;\n\nreturn newmsg;",
+        "g": "400a7cafac3ffc37",
+        "id": "ca182f9cd1b38747",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> kWh",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "5ed496620a074532"
+            ]
+        ],
+        "x": 480,
+        "y": 1000,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "400a7cafac3ffc37",
+        "group": "fb4598d63a717c25",
+        "height": "0",
+        "id": "5ed496620a074532",
+        "label": "kWh:",
+        "layout": "row-spread",
+        "name": "kWh",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": "0",
+        "wires": [
+        ],
+        "x": 670,
+        "y": 1000,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\nFW Version\n\n*/\n\nvar newmsg ={};\nnewmsg.payload = msg.payload.COST;\nnewmsg.payload = Math.round(newmsg.payload*100)/100 + \" €\";\n\nreturn newmsg;",
+        "g": "400a7cafac3ffc37",
+        "id": "89925d193a28e0f5",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Cost",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "a922a50dca018e79"
+            ]
+        ],
+        "x": 480,
+        "y": 1040,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "g": "400a7cafac3ffc37",
+        "group": "fb4598d63a717c25",
+        "height": "0",
+        "id": "a922a50dca018e79",
+        "label": "Kosten:",
+        "layout": "row-spread",
+        "name": "Cost",
+        "order": 4,
+        "style": false,
+        "type": "ui_text",
+        "width": "0",
+        "wires": [
+        ],
+        "x": 670,
+        "y": 1040,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "finalize": "",
+        "func": "/*\n\n\"CMD\" - command\n\"VALUE\" - parameter\n\"XTIME\" - execution time\n\"INTERVAL\" - repeat interval (0=once, 1h=3600, 1d=86400, 1w=604800)\n\"TXT\" - text / filename\n\ncommands:\n 0 - set target temp - 20..40\n 1 - set unit (0=°F, 1=°C)\n 2 - set air (0=OFF, 1=ON)\n 3 - set heater (0=OFF, 1=ON)\n 4 - set pump (0=OFF, 1=ON)\n 5 - clear command queue\n 6 - reboot ESP\n 7 - GETTARGET (not used)\n 8 - Set all other timers to zero\n 9 - Set chlorine age to zero\n10 - Set filter age to zero\n11 - set jets (0=OFF, 1=ON)\n12 - display brightness (0..8)\n13 - set beep (0=beeps once, 1=chirps once, 2=plays the melody TXT=filename) - ONLY 6-wire\n14 - set abbient temperature in °F\n15 - set abbient temperature in °C\n16 - reset daily\n17 - 4-wire only: takes control over pump.\n18 - 4-wire only: 0=only one heater, 1=use both heater,\n19 - 6-wire only: display message on diplay\n20 - Set XTIME to the time you want the water to be at target temperature. Make sure you have calibrated first.\n\n*/\n\n\n\nvar msg0 = {payload:{\"CMD\":6,\"XTIME\":0,\"INTERVAL\":0,\"TXT\":\"\",\"VALUE\":1}};\nreturn msg0;\n",
+        "g": "8954f05f5ab88273",
+        "id": "849a5d5f34467f38",
+        "initialize": "",
+        "libs": [
+        ],
+        "name": "-> Reboot ESP",
+        "noerr": 0,
+        "outputs": 1,
+        "type": "function",
+        "wires": [
+            [
+                "f2c55ef98c424d25"
+            ]
+        ],
+        "x": 180,
+        "y": 660,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "broker": "aec51ae1.031e38",
+        "contentType": "",
+        "correl": "",
+        "expiry": "",
+        "g": "8954f05f5ab88273",
+        "id": "f2c55ef98c424d25",
+        "name": "Lay-Z-Spa Command",
+        "qos": "",
+        "respTopic": "",
+        "retain": "",
+        "topic": "layzspa/command",
+        "type": "mqtt out",
+        "userProps": "",
+        "wires": [
+        ],
+        "x": 200,
+        "y": 700,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "crontab": "",
+        "g": "8954f05f5ab88273",
+        "id": "0a2615ba6b57e79f",
+        "name": "->",
+        "once": false,
+        "onceDelay": 0.1,
+        "payload": "6",
+        "payloadType": "num",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "topic": "",
+        "type": "inject",
+        "wires": [
+            [
+                "849a5d5f34467f38"
+            ]
+        ],
+        "x": 150,
+        "y": 620,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "group": "3584dd1ead9f4221",
+        "height": 1,
+        "id": "3468f24615efb7e6",
+        "name": "spacer",
+        "order": 2,
+        "type": "ui_spacer",
+        "width": 1,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "group": "3584dd1ead9f4221",
+        "height": 1,
+        "id": "eac26ed72d483f97",
+        "name": "spacer",
+        "order": 6,
+        "type": "ui_spacer",
+        "width": 1,
+        "z": "a9030351c3d37f26"
+    },
+    {
+        "birthMsg": {
+        },
+        "birthPayload": "",
+        "birthQos": "0",
+        "birthTopic": "",
+        "broker": "mosquitto",
+        "cleansession": true,
+        "clientid": "",
+        "closeMsg": {
+        },
+        "closePayload": "",
+        "closeQos": "0",
+        "closeTopic": "",
+        "compatmode": false,
+        "id": "aec51ae1.031e38",
+        "keepalive": "60",
+        "name": "mosquitto",
+        "port": "1883",
+        "protocolVersion": "4",
+        "sessionExpiry": "",
+        "type": "mqtt-broker",
+        "usetls": false,
+        "willMsg": {
+        },
+        "willPayload": "",
+        "willQos": "0",
+        "willTopic": ""
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "89a080bc3a655c5c",
+        "name": "Temperatur",
+        "order": 1,
+        "tab": "32116e9452a8db19",
+        "type": "ui_group",
+        "width": "6"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "3f65559ff6e71dbc",
+        "name": "Steuerung",
+        "order": 3,
+        "tab": "32116e9452a8db19",
+        "type": "ui_group",
+        "width": "6"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "3584dd1ead9f4221",
+        "name": "Soll Temperatur",
+        "order": 2,
+        "tab": "32116e9452a8db19",
+        "type": "ui_group",
+        "width": "6"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "fb4598d63a717c25",
+        "name": "Info",
+        "order": 4,
+        "tab": "32116e9452a8db19",
+        "type": "ui_group",
+        "width": "6"
+    },
+    {
+        "disabled": false,
+        "hidden": false,
+        "icon": "dashboard",
+        "id": "32116e9452a8db19",
+        "name": "Pool",
+        "type": "ui_tab"
+    }
+]
