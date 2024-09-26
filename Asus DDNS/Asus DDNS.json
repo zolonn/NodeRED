@@ -1,0 +1,397 @@
+[
+    {
+        "id": "c1403ba892a9e87f",
+        "type": "subflow",
+        "name": "Asus DDNS Subflow",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 120,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "66814b192f34bdb6"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 980,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "7f14821f4c24fd9b",
+                        "port": 0
+                    },
+                    {
+                        "id": "2ccb42cb33881656",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Action",
+                "type": "str",
+                "value": "update",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "update"
+                                },
+                                "v": "update"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "register"
+                                },
+                                "v": "register"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Name",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "MAC",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "PIN",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "1a5f12878de98534",
+        "type": "function",
+        "z": "c1403ba892a9e87f",
+        "name": "Asus DDNS username/password calc",
+        "func": "// I:\n// msg.payload.Action - register/update\n// msg.payload.WANIP - current WAN IP\n// msg.payload.Name - which name[.asuscomm.com] to use\n// msg.payload.MAC - MAC of ETH\n// msg.payload.PIN - PIN from label\n\n\n// strip ':' from MAC and '.' from IP\nvar sMAC = msg.payload.MAC.replace(/:/g, ''); msg.payload.MAC = sMAC;\nvar sWANIP = msg.payload.WANIP.replace(/\\./g, '');\nvar sData = msg.payload.Name + \"asuscommcom\" + sWANIP\n//msg.payload.Name = msg.payload.Name + \".asuscomm.com\"\n//return msg\n\n// Calculate the password as hostname+WANIP hashed by PIN\nvar oHMAC = crypto.createHmac('md5', msg.payload.PIN); //creating hmac object\nvar oData = oHMAC.update(sData); //passing the data to be hashed\n//Creating the hmac in the required format\nvar sHMAC = oData.digest('hex'); sHMAC = sHMAC.toUpperCase();\nmsg.payload.HMAC = sHMAC;\nmsg.payload.Data = sData;\n\n// prepare data for http request node\nvar newmsg = {}; newmsg.payload = {};\nnewmsg.method = \"GET\"\nnewmsg.url = \"http://\" + sMAC + \":\" + sHMAC + \"@ns1.asuscomm.com/ddns/\" + msg.payload.Action + \".jsp?hostname=\" + msg.payload.Name + \".asuscomm.com&myip=\" + msg.payload.WANIP;\n\nreturn newmsg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "43486b07f55af7c5"
+            ]
+        ]
+    },
+    {
+        "id": "43486b07f55af7c5",
+        "type": "http request",
+        "z": "c1403ba892a9e87f",
+        "name": "Asus DDNS Request",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "User-Agent",
+                "keyValue": "",
+                "valueType": "other",
+                "valueValue": "\"ez-update-3.0.11b5 unknown [] (by Angus Mackay)\""
+            }
+        ],
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "7f14821f4c24fd9b"
+            ]
+        ]
+    },
+    {
+        "id": "66814b192f34bdb6",
+        "type": "http request",
+        "z": "c1403ba892a9e87f",
+        "name": "get WAN IP via api",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://api.ipify.org/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "3a388c6dc5c16cf2"
+            ]
+        ]
+    },
+    {
+        "id": "7f14821f4c24fd9b",
+        "type": "function",
+        "z": "c1403ba892a9e87f",
+        "name": "Asus DDNS status result",
+        "func": "\n// translate return codes tu human readable form\nvar sAction = \"\"\nif (msg.responseUrl.includes(\"update.jsp\") === true)\n    sAction = \"Update\";\nelse\n    sAction = \"Registration\";\n\nvar newmsg = {};\nnewmsg.statusCode = msg.statusCode\nswitch (msg.statusCode)\n    {\n    case 200: newmsg.payload = sAction + \" success\";break;\n    case 203:\n    case 233: newmsg.payload = sAction + \" failed\"; break;\n    case 220: newmsg.payload = sAction + \" same domain success\"; break;\n    case 230: newmsg.payload = sAction + \" new domain success\"; break;\n    case 297: newmsg.payload = \"Invalid hostname\"; break;\n    case 298: newmsg.payload = \"Invalid domain name\"; break;\n    case 299: newmsg.payload = \"Invalid IP format\"; break;\n    case 401: newmsg.payload = \"Authentication failure\"; break;\n    case 407: newmsg.payload = \"Proxy authentication Required\"; break;\n    \n    default:\n        newmsg.payload = \"Unknown result code \" + msg.statusCode; break;\n    }\n\nreturn newmsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e91dfdec442f566b",
+        "type": "change",
+        "z": "c1403ba892a9e87f",
+        "name": "take over parameters",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.WANIP",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.Action",
+                "pt": "msg",
+                "to": "Action",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload.Name",
+                "pt": "msg",
+                "to": "Name",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload.MAC",
+                "pt": "msg",
+                "to": "MAC",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload.PIN",
+                "pt": "msg",
+                "to": "PIN",
+                "tot": "env"
+            },
+            {
+                "t": "delete",
+                "p": "statusCode",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "headers",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "responseUrl",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "redirectList",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "retry",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "1a5f12878de98534"
+            ]
+        ]
+    },
+    {
+        "id": "3a388c6dc5c16cf2",
+        "type": "switch",
+        "z": "c1403ba892a9e87f",
+        "name": "check WAN IP",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "2ccb42cb33881656"
+            ],
+            [
+                "e91dfdec442f566b"
+            ]
+        ],
+        "outputLabels": [
+            "not 200 - Error",
+            "200 - OK"
+        ]
+    },
+    {
+        "id": "2ccb42cb33881656",
+        "type": "function",
+        "z": "c1403ba892a9e87f",
+        "name": "Getting WAN IP failed",
+        "func": "\nvar newmsg = {};\nnewmsg.statusCode = msg.statusCode\nnewmsg.payload = \"Getting WAN IP failed\";\n\nreturn newmsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0c3aec2398b0e91",
+        "type": "tab",
+        "label": "Asus DDNS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3f9c1bf46c690625",
+        "type": "subflow:c1403ba892a9e87f",
+        "z": "b0c3aec2398b0e91",
+        "name": "Asus DDNS",
+        "env": [
+            {
+                "name": "Name",
+                "value": "myrouter",
+                "type": "str"
+            },
+            {
+                "name": "MAC",
+                "value": "01:23:45:67:89:AB",
+                "type": "str"
+            },
+            {
+                "name": "PIN",
+                "value": "12345678",
+                "type": "str"
+            }
+        ],
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "1590eebb613c76df"
+            ]
+        ]
+    },
+    {
+        "id": "c28d035fb3084188",
+        "type": "inject",
+        "z": "b0c3aec2398b0e91",
+        "name": "Trigger Action",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "3f9c1bf46c690625"
+            ]
+        ]
+    },
+    {
+        "id": "1590eebb613c76df",
+        "type": "debug",
+        "z": "b0c3aec2398b0e91",
+        "name": "D.Result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "69665ba4aa6d5556",
+        "type": "comment",
+        "z": "b0c3aec2398b0e91",
+        "name": "",
+        "info": "# SETUP\n\nfill in the fields in the Asus DDNS subflow node:\n - Action: use \"register\" only once to register\n           the desired <name>.asuscomm.com\n           then use \"update\" to refresh the IP\n - Name:   enter the name without asuscomm.com\n - MAC:    enter the MAC address from the label \n           of your router\n - PIN:    enter the PIN from the label \n           of your router\n\n# Usage\n\njust send any msg to the node, \ncontent will be ignored\n\n# Output\n - msg.statusCode - returned code (200 is OK)\n - msg.payload    - text message explaining\n                    possible error",
+        "x": 480,
+        "y": 240,
+        "wires": []
+    }
+]
