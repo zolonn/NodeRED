@@ -5,7 +5,7 @@ please note: you have to own an Asus router, as the registration is depending on
 
 fill in the fields in the Asus DDNS subflow node:
  - Action: use "register" only once to register
-           the desired <name>.asuscomm.com
+           the desired name.asuscomm.com
            then use "update" to refresh the IP
  - Name:   enter the name without asuscomm.com
  - MAC:    enter the MAC address from the label 
